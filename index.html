@@ -2,21 +2,25 @@
 <html lang="en-us">
 
     <head>
+        <title>The Crystal Collector</title>
+
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="assets/javascript/game.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="assets/javascript/game.js"></script>
     </head>
 
     <body>
         <h1>The Crystal Collector</h1>
 
-        <h3 id="winningNumber">0</h3>
+        <h3 id="winningNumber"></h3>
 
-        <div class="row">
+        <p id="game_msg">Press 'Space' to Start a New Game!</p>
+
+        <div class="row crystalRow">
 
             <img class="crystalImage" id="crystal_1" src="assets/images/crystal1.png">
             <img class="crystalImage" id="crystal_2" src="assets/images/crystal2.png">
@@ -24,6 +28,9 @@
             <img class="crystalImage" id="crystal_4" src="assets/images/crystal4.png">
 
         </div>
+
+        <h2>Wins: <span id="wins"></span></h2>
+        <h2>Losses: <span id="loss"></span></h2>
     </body>
 
 </html>
