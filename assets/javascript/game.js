@@ -1,19 +1,55 @@
 let targetScore = Math.floor(Math.random() * 101) + 19;
 let crystalValues = [];
 let gameActive = false;
+let score = 0;
 let wins = 0;
 let losses = 0;
 
-document.onkeyup = function(event)
-{
-    if (!gameActive && event.code === 'Space')
+
+
+$(document).ready(function () 
+{    
+    document.onkeyup = function (event) 
     {
-        NewGame();
-    }  
-}
+        if (!gameActive && event.code === 'Space') 
+        {
+            NewGame();
+        }
+    }
+
+    $(".crystalImage").click(function () 
+    {
+        if (gameActive) 
+        {
+            let thisCrystal = $(this).attr('id');
+
+            if (thisCrystal === "crystal_1") 
+            {
+                score += crystalValues[0];
+            }
+            else if (thisCrystal === "crystal_2") 
+            {
+                score += crystalValues[1];
+            }
+            else if (thisCrystal === "crystal_3") 
+            {
+                score += crystalValues[2];
+            }
+            else if (thisCrystal === "crystal_4") 
+            {
+                score += crystalValues[3];
+            }
+
+            UpdateScore();
+        }
+
+    });
+
+});
 
 function NewGame()
 {
+    score = 0;
     targetScore = Math.floor(Math.random() * 101) + 19;
 
     crystalValues = [];
@@ -26,10 +62,29 @@ function NewGame()
 
     gameActive = true;
     $("#winningNumber").text(targetScore);
+    $("#score").text(score);
     $("#wins").text(wins);
     $("#loss").text(losses);
     $("#game_msg").text("");
 
     console.log(targetScore);
     console.log(crystalValues);
+}
+
+function UpdateScore()
+{
+    $("#score").text(score);
+
+    if (score === targetScore)
+    {
+        $("#game_msg").text("You Win! Press 'Space' to Play Again!");
+        wins++;
+        gameActive = false;
+    }
+    else if (score > targetScore)
+    {
+        $("#game_msg").text("You Have Lost. Press 'Space' to Play Again!");
+        losses++;
+        gameActive = false;
+    }
 }
