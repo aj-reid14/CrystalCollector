@@ -1,0 +1,15 @@
+.crystalImage
+{
+    border: 5px outset black;
+    border-radius: 50px;
+    background-color: darkcyan;
+    padding: 5px;
+    margin: 0px 5px;
+    width: 150px;
+    height: 150px;
+}
+
+.crystalImage:hover
+{
+    background-color: darkgreen;
+}
