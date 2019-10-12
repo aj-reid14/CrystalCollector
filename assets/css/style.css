@@ -1,15 +1,41 @@
+body
+{
+    /* background-image: url("../images/sky.jpg"); */
+}
+
+.game_content
+{
+    border: 10px outset black;
+    padding-top: 10px;
+    margin: auto;
+}
+
+h1, h2, h3, h4
+{
+    text-align: center;
+    font-family: 'Slackey', cursive;
+}
+
 .crystalImage
 {
     border: 5px outset black;
     border-radius: 50px;
-    background-color: darkcyan;
+    /* background-image: url("../images/crystal_background.gif"); */
+    background-size: cover;
     padding: 5px;
-    margin: 0px 5px;
+    margin: 5px;
     width: 150px;
-    height: 150px;
+    height: 125px;
 }
 
 .crystalImage:hover
 {
-    background-color: darkgreen;
+    background-color: cyan;
+}
+
+.crystalRow
+{
+    text-align: center;
+    padding: 10px;
+    margin: auto;
 }

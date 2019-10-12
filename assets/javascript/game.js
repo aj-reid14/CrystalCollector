@@ -4,6 +4,9 @@ let gameActive = false;
 let score = 0;
 let wins = 0;
 let losses = 0;
+let coinSound = new Audio("assets/audio/coin.wav");
+let winSound = new Audio("assets/audio/win.wav");
+let lossSound = new Audio("assets/audio/loss.wav");
 
 
 
@@ -21,6 +24,7 @@ $(document).ready(function ()
     {
         if (gameActive) 
         {
+            coinSound.play();
             let thisCrystal = $(this).attr('id');
 
             if (thisCrystal === "crystal_1") 
@@ -61,11 +65,11 @@ function NewGame()
     }
 
     gameActive = true;
-    $("#winningNumber").text(targetScore);
+    $("#winningNumber").text("-> " + targetScore + " <-");
     $("#score").text(score);
     $("#wins").text(wins);
     $("#loss").text(losses);
-    $("#game_msg").text("");
+    $("#game_msg").text("Click any gem to add to your score, try to match the number without going over!");
 
     console.log(targetScore);
     console.log(crystalValues);
@@ -77,12 +81,14 @@ function UpdateScore()
 
     if (score === targetScore)
     {
+        winSound.play();
         $("#game_msg").text("You Win! Press 'Space' to Play Again!");
         wins++;
         gameActive = false;
     }
     else if (score > targetScore)
     {
+        lossSound.play();
         $("#game_msg").text("You Have Lost. Press 'Space' to Play Again!");
         losses++;
         gameActive = false;
