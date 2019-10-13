@@ -36,11 +36,7 @@ h1, h2, h3, h4
 
 .crystalImage
 {
-    /* border: 5px outset black; */
-    /* border-radius: 50px; */
-    /* background-color: darkcyan; */
     opacity: 0.7;
-    /* padding: 5px; */
     margin: 5px;
     width: 150px;
     height: 125px;
